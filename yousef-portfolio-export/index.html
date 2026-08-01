@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yousef Abdallah - Full Stack Web Developer. Harvard CS50x trained. Building cutting-edge web products with exceptional interfaces and bulletproof logic.">
+    <meta name="keywords" content="web developer, full stack developer, HTML, CSS, JavaScript, Python, React, portfolio">
+    <meta name="author" content="Yousef Abdallah Sabry Bilal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yousefabdallah.yousefabdallah106.workers.dev/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yousefabdallah.yousefabdallah106.workers.dev/">
+    <meta property="og:title" content="Yousef Abdallah - Full Stack Web Developer">
+    <meta property="og:description" content="Harvard CS50x trained developer building modern web applications with clean code and exceptional user experiences.">
+    <meta property="og:image" content="https://yousefabdallah.yousefabdallah106.workers.dev/images/profile.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yousefabdallah.yousefabdallah106.workers.dev/">
+    <meta name="twitter:title" content="Yousef Abdallah - Full Stack Web Developer">
+    <meta name="twitter:description" content="Harvard CS50x trained developer building modern web applications with clean code and exceptional user experiences.">
+    <meta name="twitter:image" content="https://yousefabdallah.yousefabdallah106.workers.dev/images/profile.jpg">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="MztujIM1cvWRbGF1e1qAd2OWEv44plPcIlWUWg0I5lU">
+    
+    <!-- JSON-LD Schema for Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yousef Abdallah Sabry Bilal",
+        "jobTitle": "Full Stack Web Developer",
+        "url": "https://yousefabdallah.yousefabdallah106.workers.dev/",
+        "image": "https://yousefabdallah.yousefabdallah106.workers.dev/images/profile.jpg",
+        "description": "Harvard CS50x trained web developer specializing in modern JavaScript, React, Python, and full-stack architecture.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "yousefabdallah106@gmail.com",
+            "telephone": "+20-101-751-7962"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/yousef-abdullah-588984256",
+            "https://www.facebook.com/share/196z3z6KmB/",
+            "https://www.instagram.com/y0usef_alpha"
+        ]
+    }
+    </script>
+    
+    <title>Yousef Abdallah - Full Stack Web Developer | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #06b6d4;
+            --primary-dark: #0891b2;
+            --secondary: #3b82f6;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --accent: #10b981;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, var(--background) 0%, #1a1f35 50%, var(--background) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid rgba(6, 182, 212, 0.5);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+            position: relative;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-circle::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            z-index: -1;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        section p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 150px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cert-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .cert-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cert-buttons a {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            background: rgba(6, 182, 212, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-buttons a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .project-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-brand">
+            <span>👨‍💻</span>
+            <span>Yousef</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn btn-primary" onclick="downloadResume()">📥 Resume</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Yousef Abdallah</h1>
+                <p>Full Stack Web Developer</p>
+                <p>Building cutting-edge web products with exceptional interfaces and bulletproof logic. Harvard CS50x trained, with expertise in modern JavaScript, React, Python, and full-stack architecture.</p>
+                <p>I craft solutions that scale, perform, and delight. Real-world projects showcasing problem-solving mastery and meticulous attention to detail.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="contactMe()">Get In Touch →</button>
+                    <button class="btn btn-secondary" onclick="downloadResume()">📥 Resume</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <img src="images/profile.jpg" alt="Yousef Abdallah - Full Stack Web Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <p>Showcase of real-world projects demonstrating full-stack development expertise</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>ERP CRUD System</h3>
+                    <p class="project-tech">HTML • CSS • JavaScript • LocalStorage</p>
+                </div>
+                <div class="project-body">
+                    <p>Developed a comprehensive product management system with full CRUD operations. Implemented automatic price calculations and persistent storage using LocalStorage. Designed an advanced search engine by title or category.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Finance Trading Platform</h3>
+                    <p class="project-tech">Flask • SQLite • Python • Real-time API</p>
+                </div>
+                <div class="project-body">
+                    <p>Built a full-stack stock trading simulation platform with user authentication. Integrated real-time stock price APIs for live market data and trading analytics. Implemented portfolio tracking and transaction history modules.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Age Calculator</h3>
+                    <p class="project-tech">Vanilla JavaScript • CSS3 • HTML5</p>
+                </div>
+                <div class="project-body">
+                    <p>Created a high-precision age calculation tool with an intuitive user interface. Optimized date processing logic for accurate results across all edge cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <p>Core technologies and expertise areas</p>
+        <div class="skills-grid">
+            <div class="skill-tag">HTML5</div>
+            <div class="skill-tag">CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">Flask</div>
+            <div class="skill-tag">SQLite</div>
+            <div class="skill-tag">REST APIs</div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications & Achievements</h2>
+        <p>Verified credentials demonstrating expertise and commitment to excellence</p>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="images/CS50x_thumb.png" alt="CS50x Certificate">
+                </div>
+                <h3>CS50x</h3>
+                <p><strong>Harvard University</strong> • 2026</p>
+                <p>Comprehensive computer science fundamentals and programming principles</p>
+                <div class="cert-buttons">
+                    <a href="images/CS50x.pdf" target="_blank">📄 View PDF</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="images/CertificateTofas2_thumb.png" alt="Sprix Tofas Certificate">
+                </div>
+                <h3>Sprix Tofas Level 1, 2, 3</h3>
+                <p><strong>Hiroshima University</strong> • 2025-2026</p>
+                <p>Advanced Japanese language proficiency certification</p>
+                <div class="cert-buttons">
+                    <a href="images/CertificateTofas2.pdf" target="_blank">📄 View PDF</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="images/certificateE1E_thumb.png" alt="English Certificate">
+                </div>
+                <h3>English Course</h3>
+                <p><strong>Edrak</strong> • 2026</p>
+                <p>Professional English language training</p>
+                <div class="cert-buttons">
+                    <a href="images/certificateE1E.pdf" target="_blank">📄 View PDF</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>🏆 Governorate Exam Excellence</h3>
+                <p><strong>Ministry of Education</strong> • 2026</p>
+                <p>Ranked first in the governorate in the exam gate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Build Something Extraordinary</h2>
+        <p>Ready to collaborate on your next project? Let's create something that matters.</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h3>📧 Email</h3>
+                <a href="mailto:yousefabdallah106@gmail.com">yousefabdallah106@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <h3>📱 Phone</h3>
+                <a href="tel:+201017517962">+20 101 751 7962</a>
+            </div>
+            <div class="contact-item">
+                <h3>🔗 LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/yousef-abdullah-588984256" target="_blank">Connect on LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <h3>📘 Facebook</h3>
+                <a href="https://www.facebook.com/share/196z3z6KmB/" target="_blank">Follow on Facebook</a>
+            </div>
+            <div class="contact-item">
+                <h3>📷 Instagram</h3>
+                <a href="https://www.instagram.com/y0usef_alpha" target="_blank">Follow on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Yousef Abdallah. All rights reserved. | Hosted on Cloudflare Pages</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Contact function
+        function contactMe() {
+            window.location.href = 'mailto:yousefabdallah106@gmail.com';
+        }
+
+        // Download resume
+        function downloadResume() {
+            window.open('images/resume.pdf', '_blank');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

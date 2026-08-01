@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://yousefabdallah.yousefabdallah106.workers.dev/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Allow crawling of all files
+User-agent: *
+Allow: /images/
+Allow: *.pdf
+Allow: *.jpg
+Allow: *.png
+Allow: *.gif
